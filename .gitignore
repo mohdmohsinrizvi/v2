@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# data & large artifacts (never commit)
+dataset/
+*.tsv
+*.parquet
+*.pq
+*.model
+*.lgb
+*.pkl
+*.joblib
+*.npz
+artifacts/**
+!artifacts/.gitkeep
+submissions/**
+!submissions/.gitkeep
+
+# secrets
+.env
+*.pem
+.aws/
+credentials
+config/credentials*

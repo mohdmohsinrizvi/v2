@@ -1,0 +1,16 @@
+{
+  "split": "dev",
+  "matching": "submissions/matching_results.tsv",
+  "macro_f05": 0.970247,
+  "pair_precision": 0.987038,
+  "pair_recall": 0.95761,
+  "pair_f05": 0.981009,
+  "tp": 31830,
+  "fp": 418,
+  "fn": 1409,
+  "s1_entities": 9995,
+  "singletons": 2000,
+  "singletons_correctly_empty": 1875,
+  "s1_predicted_empty": 1904,
+  "s1_predicted_nonempty": 8091
+}

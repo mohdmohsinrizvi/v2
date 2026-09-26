@@ -1,0 +1,6 @@
+/tmp/opencode/t_full.py:19: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  .explode('m').filter(pl.col('m')!='')
+positives 33239
+k=20 {'pair': 0.9844, 'at_least_one': 0.998, 'all': 0.9503} pairs 282491 per_s1 28.3 sec 14.3 {'India': 25872, 'US': 34087}
+k=50 {'pair': 0.9887, 'at_least_one': 0.9984, 'all': 0.9646} pairs 562811 per_s1 56.3 sec 11.8 {'India': 25872, 'US': 34087}
+k=75 {'pair': 0.9903, 'at_least_one': 0.9986, 'all': 0.9696} pairs 801835 per_s1 80.2 sec 11.8 {'India': 25872, 'US': 34087}

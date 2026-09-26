@@ -1,0 +1,2 @@
+experiment_id,timestamp,git_commit,description,candidate_recall,all_match_coverage,validation_macro_f0_5,precision,recall,runtime,peak_ram,estimated_aws_cost,keep
+EXP-001,2026-09-25T10:43:12Z,,dev end-to-end: normalize -> country-blocked name+addr TF-IDF k=50 + join blocks -> LightGBM -> threshold search on val fold -> submission,0.9887,0.9646,0.9687905166929205,0.993261,0.94004,"148s (dev sample, 9995 S1 / 272474 target)",468MB rss (measured during candidate generation),0.00 (local),yes

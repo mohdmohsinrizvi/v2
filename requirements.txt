@@ -1,0 +1,13 @@
+boto3==1.43.102
+joblib==1.6.0
+lightgbm==4.7.0
+numpy==2.5.3
+pandas==3.0.6
+polars==1.44.2
+psutil==7.2.2
+pyarrow==25.0.1
+PyYAML==6.0.3
+RapidFuzz==3.14.6
+scikit-learn==1.9.1
+scipy==1.18.1
+tqdm==4.70.1

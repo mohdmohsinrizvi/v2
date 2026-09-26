@@ -1,0 +1,31 @@
+read s1 0.1 s
+read s2 0.4 s
+    [raw] rss=583MB
+normalize 200k s1: 16.1s (12422 rows/s)
+    [norm_s1] rss=635MB
+normalize 1M s2: 80.2s (12469 rows/s)
+    [norm_s2] rss=873MB
+target rows 1000000
+stats: 5.8s
+    [stats] rss=1622MB
+tfidf fit on 1000000: 29.8s {'India': 64267, 'US': 73614}
+    [tfidf_fit] rss=1452MB
+tfidf query 200k: 73.0s -> 9946093 pairs
+    [query] rss=1691MB
+join blocks 200k: 3.0s -> 2917597 pairs
+    [cand] rss=1816MB
+features 500k: 19.8s
+    [features] rss=1849MB
+{
+  "read_s1_sec": 0.1,
+  "read_s2_sec": 0.4,
+  "norm_s1_sec": 16.1,
+  "norm_s2_sec": 80.2,
+  "target_rows": 1000000,
+  "stats_sec": 5.8,
+  "tfidf_fit_sec": 29.8,
+  "tfidf_query_sec": 73.0,
+  "cand_sec": 3.0,
+  "features_500k_sec": 19.8,
+  "peak_rss_mb": 1849.0
+}

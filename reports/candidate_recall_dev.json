@@ -1,0 +1,30 @@
+{
+  "split": "dev",
+  "s1_total": 9995,
+  "s1_with_truth": 7995,
+  "positive_pairs": 33239,
+  "positive_pairs_retrieved": 32946,
+  "pair_candidate_recall": 0.9912,
+  "at_least_one_s1_coverage": 0.9986,
+  "all_match_s1_coverage": 0.9722,
+  "mean_truth_matches_per_s1": 4.157,
+  "candidate_pairs": 1042919,
+  "candidates_per_s1": 104.34,
+  "per_method_pair_recall": {
+    "e_name": 0.2563,
+    "e_ss": 0.4851,
+    "rare": 0.3119,
+    "addr": 0.304,
+    "tfidf": 0.9901
+  },
+  "tfidf_rank_pair_recall": {
+    "top1": 0.238,
+    "top5": 0.895,
+    "top10": 0.9735,
+    "top20": 0.9812,
+    "top50": 0.9872
+  },
+  "gate_target": 0.97,
+  "gate_pass": true,
+  "elapsed_sec": 3.3
+}

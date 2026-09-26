@@ -1,0 +1,12 @@
+/tmp/opencode/t_miss.py:18: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  pl.col('matched_entity_ids').str.split(',').alias('m')).explode('m').filter(pl.col('m')!='')
+e_name pair recall 0.2563
+e_ss pair recall 0.4851
+rare pair recall 0.3119
+addr pair recall 0.304
+combined name+addr tfidf k= 20 (0.9844, 282491)
+combined name+addr tfidf k= 50 (0.9887, 562811)
+combined name+addr tfidf k= 75 (0.9903, 801835)
+combined name+addr tfidf k= 100 (0.9912, 1042919)
+addr-only tfidf k= 50 (0.9776, 560305)
+addr-only tfidf k= 100 (0.9804, 1022239)

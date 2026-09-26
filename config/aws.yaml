@@ -1,0 +1,45 @@
+# AWS project configuration — no secrets, safe to commit.
+# Credentials live ONLY in the AWS credential chain (~/.aws or `aws login`).
+
+project: amazon-ml-challenge-2026
+account_id: "357112746764"
+workload_region: us-east-1
+
+s3:
+  bucket: amazon-ml-challenge-2026-357112746764
+  encryption: SSE-S3 (AES256, bucket default)
+  block_public_access: true
+  prefix_layout:
+    raw: raw/                 # immutable competition data (never delete/overwrite)
+    processed: processed/
+    indices: indices/
+    candidates: candidates/
+    features: features/
+    models: models/
+    validation: validation/
+    submissions: submissions/
+    logs: logs/
+    temp: temp/               # only prefix eligible for lifecycle expiry
+
+tags:
+  Project: amazon-ml-challenge-2026
+  Purpose: baseline
+  ManagedBy: opencode-aws-mcp
+  Environment: competition
+  CostCenter: amazon-ml-2026
+  Expires: "2026-10-31"
+
+mcp:
+  endpoint: https://aws-mcp.us-east-1.api.aws/mcp
+  proxy: MCP Proxy for AWS v1.7.0
+  profile_env: AWS_MCP_PROXY_PROFILES=default
+
+budgets:
+  existing: "My Zero-Spend Budget ($1.00/month, alerts early, free)"
+  note: "First two budgets are free; no second budget created."
+
+cleanup:
+  bucket_empty_and_delete: |
+    aws s3 rm s3://amazon-ml-challenge-2026-357112746764 --recursive
+    aws s3 rb s3://amazon-ml-challenge-2026-357112746764
+  rule: "raw/ and submissions/ are NEVER deleted without explicit human approval."

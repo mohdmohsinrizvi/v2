@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-09-25T13:13:06",
+  "total_bytes": 2520603693,
+  "total_gb": 2.521,
+  "notes": "Single local copy found; no duplicate dataset copies detected under ~/Desktop (maxdepth 4). __MACOSX/ contains only resource-fork junk (92K), not uploaded.",
+  "files": [
+    {
+      "filename": "train_source1.tsv",
+      "relative_path": "student_resource/dataset/train/train_source1.tsv",
+      "size_bytes": 210069713,
+      "purpose": "train Source 1 reference records",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/train/train_source1.tsv",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "train_source2.tsv",
+      "relative_path": "student_resource/dataset/train/train_source2.tsv",
+      "size_bytes": 489301488,
+      "purpose": "train Source 2 records",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/train/train_source2.tsv",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "train_source3.tsv",
+      "relative_path": "student_resource/dataset/train/train_source3.tsv",
+      "size_bytes": 503705637,
+      "purpose": "train Source 3 records",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/train/train_source3.tsv",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "train_ground_truth.tsv",
+      "relative_path": "student_resource/dataset/train/train_ground_truth.tsv",
+      "size_bytes": 127015583,
+      "purpose": "train ground-truth links",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/train/train_ground_truth.tsv",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "test_source1.tsv",
+      "relative_path": "student_resource/dataset/test/test_source1.tsv",
+      "size_bytes": 175022086,
+      "purpose": "test Source 1 (prediction targets)",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/test/test_source1.tsv",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "test_source2.tsv",
+      "relative_path": "student_resource/dataset/test/test_source2.tsv",
+      "size_bytes": 509456422,
+      "purpose": "test Source 2 (candidate targets)",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/test/test_source2.tsv",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "test_source3.tsv",
+      "relative_path": "student_resource/dataset/test/test_source3.tsv",
+      "size_bytes": 506002772,
+      "purpose": "test Source 3 (candidate targets)",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/test/test_source3.tsv",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "README.md",
+      "relative_path": "student_resource/README.md",
+      "size_bytes": 14130,
+      "purpose": "official problem statement / rules",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/meta/README.md",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "validate_submission.py",
+      "relative_path": "student_resource/utils/validate_submission.py",
+      "size_bytes": 13687,
+      "purpose": "official submission validator",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/meta/validate_submission.py",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    },
+    {
+      "filename": "Documentation_template.md",
+      "relative_path": "student_resource/Documentation_template.md",
+      "size_bytes": 2175,
+      "purpose": "required methodology template",
+      "upload_destination": "s3://amazon-ml-challenge-2026-357112746764/raw/meta/Documentation_template.md",
+      "upload_status": "uploaded_verified",
+      "sha256": "NOT_COMPUTED (large-file policy)"
+    }
+  ],
+  "verified_at": "2026-09-25T14:36:02",
+  "verification": {
+    "method": "aws s3 ls --summarize + byte-compare of the 7 TSVs (local vs remote)",
+    "objects": 11,
+    "total_bytes": 2520812871,
+    "tsv_bytes_local": 2520573701,
+    "tsv_bytes_remote": 2520573701,
+    "byte_exact_match": true,
+    "zero_byte_objects": 0,
+    "public_access": "none (BPA all true, no bucket policy, ACL owner-only)",
+    "junk_removed": [
+      "raw/.DS_Store"
+    ]
+  }
+}

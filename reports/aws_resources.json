@@ -1,0 +1,93 @@
+{
+  "project": "amazon-ml-challenge-2026",
+  "account_id": "357112746764",
+  "caller_arn": "arn:aws:iam::357112746764:root",
+  "principal_type": "root (AWS account root — mutations blocked until IAM identity is created)",
+  "workload_region": "us-east-1",
+  "mcp_endpoint": "https://aws-mcp.us-east-1.api.aws/mcp",
+  "mcp_proxy": "MCP Proxy for AWS v1.7.0",
+  "generated_at": "2026-09-25T13:55:00Z",
+  "method": "aws-mcp run_script (read-only: DescribeRegions/DescribeInstances/DescribeVolumes/ListBuckets/List* SageMaker/DescribeBudgets/GetFreeTierUsage)",
+  "notes": "This file is populated BEFORE any project resource is created. Only pre-existing account resources are listed. Nothing here was created or modified by this project.",
+  "pre_existing_resources": [
+    {
+      "service": "S3",
+      "resource_type": "bucket",
+      "name": "sagemaker-us-east-1-357112746764",
+      "arn": "arn:aws:s3:::sagemaker-us-east-1-357112746764",
+      "region": "us-east-1",
+      "creation_time": "UNKNOWN (auto-created SageMaker service bucket)",
+      "purpose": "Pre-existing, created by SageMaker service (not by this project)",
+      "estimated_hourly_cost": "$0 (storage only, size not yet measured)",
+      "currently_billable": "storage only — size UNKNOWN",
+      "termination_behavior": "Not ours — DO NOT DELETE",
+      "cleanup_instruction": "LEAVE ALONE (rule: never delete unrelated resources)",
+      "status": "active"
+    },
+    {
+      "service": "SageMaker",
+      "resource_type": "Studio Domain",
+      "name": "QuickSetupDomain-20260925T125597",
+      "arn": "arn:aws:sagemaker:us-east-1:357112746764:domain/d-oterpqidkrbl",
+      "region": "us-east-1",
+      "creation_time": "2026-09-25T07:25:15Z (before this session)",
+      "purpose": "Pre-existing SageMaker Quick Setup domain — NOT created by this project",
+      "estimated_hourly_cost": "$0 while no apps are running (domain itself is not billed)",
+      "currently_billable": "NO — ListApps returned 0 apps, ListSpaces returned 0 spaces",
+      "termination_behavior": "Would only bill if a Studio app is started",
+      "cleanup_instruction": "LEAVE ALONE unless the user confirms it is unused; if approved: sagemaker delete-domain",
+      "status": "InService (idle, 0 apps)"
+    },
+    {
+      "service": "AWS Budgets",
+      "resource_type": "budget",
+      "name": "My Zero-Spend Budget",
+      "arn": "arn:aws:billing::357112746764:billingview/primary (via budget)",
+      "region": "us-east-1",
+      "creation_time": "2026-09-25T07:20:47Z (before this session)",
+      "purpose": "Pre-existing monthly cost budget, limit 1.00 USD",
+      "estimated_hourly_cost": "$0 (first two budgets are free)",
+      "currently_billable": "NO (free tier: first 2 budgets)",
+      "termination_behavior": "n/a",
+      "cleanup_instruction": "Keep; may add one more budget with project thresholds ($10/$25/$40/$60/$75) if approved",
+      "status": "HEALTHY, ActualSpend 0.00 USD"
+    }
+  ],
+  "verified_empty": {
+    "ec2_instances_all_enabled_regions": 0,
+    "ebs_volumes_all_enabled_regions": 0,
+    "sagemaker_notebook_instances": 0,
+    "sagemaker_endpoints": 0,
+    "sagemaker_training_jobs": 0,
+    "sagemaker_processing_jobs": 0,
+    "sagemaker_studio_apps": 0,
+    "budgets_total": 1,
+    "s3_buckets_total": 1,
+    "enabled_regions_scanned": 17
+  },
+  "project_resources_created": [
+    {
+      "service": "S3",
+      "resource_type": "bucket",
+      "name": "amazon-ml-challenge-2026-357112746764",
+      "arn": "arn:aws:s3:::amazon-ml-challenge-2026-357112746764",
+      "region": "us-east-1",
+      "creation_time": "2026-09-25T14:13Z",
+      "purpose": "Private project bucket: raw competition data, processed artifacts, models, submissions",
+      "estimated_hourly_cost": "$0.0015/h ($0.023/GB-month on 2.52 GB)",
+      "currently_billable": "storage only",
+      "termination_behavior": "Manual; raw/ never deleted without human approval",
+      "cleanup_command": "aws s3 rm s3://amazon-ml-challenge-2026-357112746764 --recursive && aws s3 rb s3://amazon-ml-challenge-2026-357112746764",
+      "security": "BlockPublicAccess all=true, no bucket policy, ACL owner-only, SSE-S3 (AES256), project tags applied",
+      "objects": 11,
+      "bytes": 2520812871,
+      "status": "active"
+    }
+  ],
+  "unknown_must_verify": [
+    "promotional credit balance and expiry — Console: Billing and Cost Management > Credits",
+    "Free vs Paid plan and account creation date — Console: Billing > Credits shows credit expiry",
+    "Free Tier eligibility / SageMaker 2-month free tier status — Console: Billing > Free Tier",
+    "S3 bucket sagemaker-* storage size (bytes) — not measured to avoid unnecessary LIST of a foreign bucket"
+  ]
+}

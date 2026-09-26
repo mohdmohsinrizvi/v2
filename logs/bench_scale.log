@@ -1,0 +1,29 @@
+read s1 0.1 s
+read s2 1.0 s
+    [raw] rss=460MB
+normalize 200k s1: 15.3s (13072 rows/s)
+    [norm_s1] rss=635MB
+normalize 1M s2: 79.1s (12642 rows/s)
+    [norm_s2] rss=873MB
+target rows 1000000
+stats: 5.7s
+    [stats] rss=1649MB
+tfidf fit on 1000000: 30.1s {'India': 64267, 'US': 73614}
+    [tfidf_fit] rss=1450MB
+Traceback (most recent call last):
+  File "/tmp/opencode/bench_scale.py", line 53, in <module>
+    res = retr.query(q)
+          ^^^^^^^^^^^^^
+  File "/home/mohsin/Desktop/amazon/amazon_ml_2026/src/pipeline/tfidf.py", line 225, in query
+    qsid = part["sid"].to_list()
+           ~~~~^^^^^^^
+  File "/home/mohsin/Desktop/amazon/amazon_ml_2026/.venv/lib/python3.12/site-packages/polars/dataframe/frame.py", line 1445, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mohsin/Desktop/amazon/amazon_ml_2026/.venv/lib/python3.12/site-packages/polars/_utils/getitem.py", line 163, in get_df_item_by_key
+    return df.get_column(key)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/mohsin/Desktop/amazon/amazon_ml_2026/.venv/lib/python3.12/site-packages/polars/dataframe/frame.py", line 9400, in get_column
+    return wrap_s(self._df.get_column(name))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "sid" not found

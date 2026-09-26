@@ -1,0 +1,12 @@
+{
+  "split": "dev",
+  "threshold": 0.97,
+  "s1_rows": 9995,
+  "s1_with_matches": 8038,
+  "s1_with_candidates": 9995,
+  "match_ids": 31458,
+  "candidate_ids": 562811,
+  "avg_matches_per_s1": 3.147,
+  "avg_candidates_per_s1": 56.309,
+  "elapsed_sec": 1.0
+}

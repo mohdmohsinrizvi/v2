@@ -1,0 +1,40 @@
+/tmp/opencode/audit2.py:11: DeprecationWarning: In Polars 2.0, the default behavior for `empty_as_null` will change to `False`. To keep the current behavior, explicitly set `empty_as_null=True`.
+  gt = gt.filter(pl.col("m").list.len() > 0).explode("m").select(["source1_entity_id","m"])
+{
+  "positive_links": 7761612,
+  "s1_rows": 2206821,
+  "s2_rows": 5034616,
+  "s3_rows": 5285603,
+  "links_missing_c2": 4067993,
+  "links_missing_c3": 3816866,
+  "links_to_s2": 3693619,
+  "s2_country_mismatch": 0,
+  "links_to_s3": 3944746,
+  "s3_country_mismatch": 0,
+  "mismatch_examples": [],
+  "s1_exact_name_dupe_rows": 684655,
+  "s1_suffix_name_dupe_rows": 942758,
+  "s1_top_name_clusters": [
+    {
+      "nn": "primary care group",
+      "n": 253
+    },
+    {
+      "nn": "ear nose and throat group",
+      "n": 251
+    },
+    {
+      "nn": "pediatric group",
+      "n": 222
+    },
+    {
+      "nn": "womens health group",
+      "n": 220
+    },
+    {
+      "nn": "physical therapy group",
+      "n": 218
+    }
+  ]
+}
+elapsed 155.1

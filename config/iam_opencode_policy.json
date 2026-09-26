@@ -1,0 +1,64 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "IdentityRead",
+      "Effect": "Allow",
+      "Action": ["sts:GetCallerIdentity", "sts:ListRoles", "iam:ListUsers", "iam:ListRoles", "iam:ListAttachedUserPolicies", "iam:ListAccessKeys", "iam:GetUser", "iam:GetRole", "iam:GetPolicyVersion"]
+    },
+    {
+      "Sid": "S3ProjectBucketOnly",
+      "Effect": "Allow",
+      "Action": ["s3:ListAllMyBuckets", "s3:GetBucketLocation", "s3:GetBucketAcl", "s3:GetBucketPolicyStatus", "s3:GetBucketPublicAccessBlock"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3FullOnProjectBucket",
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::amazon-ml-challenge-2026-*",
+        "arn:aws:s3:::amazon-ml-challenge-2026-*/*"
+      ]
+    },
+    {
+      "Sid": "CostGuardrails",
+      "Effect": "Allow",
+      "Action": [
+        "budgets:ViewBudget",
+        "budgets:ListBudgets",
+        "budgets:DescribeBudget",
+        "budgets:DescribeBudgetsForAdmin",
+        "budgets:CreateBudgetAction",
+        "budgets:GetBudget",
+        "freetier:GetFreeTierUsage",
+        "ce:GetCostAndUsage",
+        "ce:GetCostForecast",
+        "billing:GetBillingPreview"
+      ]
+    },
+    {
+      "Sid": "ReadInspect",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:Describe*",
+        "sagemaker:List*",
+        "sagemaker:Describe*",
+        "cloudwatch:List*",
+        "cloudwatch:Describe*",
+        "logs:Describe*",
+        "logs:FilterLogEvents",
+        "logs:GetLogEvents"
+      ]
+    },
+    {
+      "Sid": "PassOnlyOneFutureSageMakerRole",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::357112746764:role/AmazonSageMaker-ExecutionRole-amazon-ml-2026",
+      "Condition": {
+        "StringEquals": {"iam:PassedToService": "sagemaker.amazonaws.com"}
+      }
+    }
+  ]
+}
